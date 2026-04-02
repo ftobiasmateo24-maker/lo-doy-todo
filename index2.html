@@ -1,0 +1,95 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Sistema de Asistencia</title>
+
+<style>
+    body {
+        font-family: Arial;
+        padding: 20px;
+    }
+    button {
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Sistema de Asistencia</h1>
+
+<button onclick="pasarAsistencia()">Pasar asistencia</button>
+<button onclick="verCronograma()">Ver cronograma</button>
+
+<pre id="resultado"></pre>
+
+<script>
+
+let presentes = [];
+let ausentes = [];
+
+function pasarAsistencia() {
+    presentes = [];
+    ausentes = [];
+
+    let fecha = prompt("Ingrese la fecha:");
+    let cantidad = parseInt(prompt("Cantidad de alumnos:"));
+
+    for (let i = 1; i <= cantidad; i++) {
+        let nombre = prompt("Nombre del alumno " + i);
+        let asistio = prompt(nombre + " ¿Asistió? (1=SI / 0=NO)");
+
+        if (asistio == "1") {
+            presentes.push(nombre);
+        } else {
+            ausentes.push(nombre);
+        }
+    }
+
+    mostrarResumen(fecha);
+}
+
+function verCronograma() {
+    alert(
+        "CRONOGRAMA SEMANAL\n\n" +
+        "Lunes: 18:00 - Entrenamiento Físico\n" +
+        "Martes: 18:30 - Táctica y Estrategia\n" +
+        "Miércoles: 18:00 - Fútbol Reducido\n" +
+        "Jueves: 19:00 - Gimnasio\n" +
+        "Viernes: 18:00 - Repaso de Jugadas"
+    );
+}
+
+function mostrarResumen(fecha) {
+    let texto = "";
+
+    texto += "Resumen de asistencia - " + fecha + "\n\n";
+
+    texto += "Presentes:\n";
+    presentes.forEach(p => texto += "- " + p + "\n");
+
+    texto += "\nAusentes:\n";
+    ausentes.forEach(a => texto += "- " + a + "\n");
+
+    texto += "\nTotal presentes: " + presentes.length;
+    texto += "\nTotal ausentes: " + ausentes.length;
+
+    texto += "\n\n=== FORMATO CSV ===\n";
+    texto += "Nombre:Estado\n";
+
+    presentes.forEach(p => texto += p + ":PRESENTE\n");
+    ausentes.forEach(a => texto += a + ":AUSENTE\n");
+
+    document.getElementById("resultado").textContent = texto;
+}
+
+</script>
+
+</body>
+</html>
+```
+
