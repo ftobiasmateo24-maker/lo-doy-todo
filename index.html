@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <title>Sistema de Asistencia</title>
 
 <style>
@@ -109,6 +110,7 @@ body {
 
 <button onclick="pasarAsistencia()">Pasar asistencia</button>
 <button onclick="verCronograma()">Ver cronograma</button>
+<button onclick="descargarPDF()" style="background-color: #28a745; border-color: #1e7e34;">Descargar PDF</button>
 
 <pre id="resultado"></pre>
 
@@ -172,6 +174,24 @@ function mostrarResumen(fecha) {
     document.getElementById("resultado").textContent = texto;
 }
 
+ function descargarPDF() {
+   const elemento = document.getElelementById("resultado"); 
+
+   if (elemento.textContent === "") {
+       alert("Primero pasa asisitencia para tener algo que descargar.");
+       return;
+   }
+
+   const opciones = {
+       margin:       1,
+       filename:     'asistencia_san _isidro.pdf',
+       image:        { type: 'jpeg', quality: 0.98 },
+       html2Canvas:  { scale: 2 },
+       jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+   }  
+   html2pdf().set(opciones).from(elemeto).save();
+}
+ 
 </script>
 
 </body>
