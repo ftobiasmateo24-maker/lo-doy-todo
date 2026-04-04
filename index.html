@@ -174,7 +174,7 @@ function mostrarResumen(fecha) {
     document.getElementById("resultado").textContent = texto;
 }
 
- function descargarPDF() {
+function descargarPDF() {
    const elemento = document.getElelementById("resultado"); 
 
    if (elemento.textContent === "") {
@@ -191,7 +191,7 @@ function mostrarResumen(fecha) {
    }  
    html2pdf().set(opciones).from(elemeto).save();
 }
- 
+
 </script>
 
 </body>
