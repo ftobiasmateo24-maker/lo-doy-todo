@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <title>Sistema de Asistencia</title>
 
 <style>
+.encabezado {
+ display: flex;
+ flex-direction: column; /* pone uno debajo del otro */
+ align-items: center;    /*los centra perfectamente *
+ padding: 20px
+ backgraund-color: white /* Le da un fondo limpio */
+ border-bottom: 2px solid #004080; /* Una linea azul abajo para separar */
+ margin-bottom: 10px;
+}
+
+.encabezado img {
+   width: 120px;        /* Un tamaño mas importante */
+   height: auto;
+   margin-bottom: 10px;
+}
+
+.encabezado h1 {
+   margin: 0;              /* Le quita el espacio extra */
+   font-size: 1.5em;       /* Tamaño del nombre del club */
+}
+
+.encabezado p {
+   margin: 5px 0;
+   color: #666;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f2f5; /* Fondo gris muy clarito para que resalte el azul */
@@ -68,6 +93,11 @@ body {
         cursor: pointer;
     }
 </style>
+<div class="encabezado">
+ <img src="CSSI.png" alt="escudo de Club Sportivo San Isidro" style="width: 100px;"
+  <h1>Club Sportivo San Isidro</h1>
+  <p>San Martin, San Juan</p>
+</div>
 </head>
 
 <body>
