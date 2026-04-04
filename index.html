@@ -186,10 +186,10 @@ function descargarPDF() {
        margin:       1,
        filename:     'asistencia_san _isidro.pdf',
        image:        { type: 'jpeg', quality: 0.98 },
-       html2Canvas:  { scale: 2 },
+       html2Canvas:  { scale: 3 },
        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
    }  
-   html2pdf().set(opciones).from(elemeto).save();
+   html2pdf().set(opciones).from(elemento).save();
 }
 
 </script>
