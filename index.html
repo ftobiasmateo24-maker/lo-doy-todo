@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sistema de Asistencia</title>
 
 <style>
@@ -95,7 +94,7 @@ body {
     }
 </style>
 <div class="encabezado">
- <img src="cssi.png" alt="escudo de Club Sportivo San Isidro" style="width: 100px;"
+ <img src="CSSI.png" alt="escudo de Club Sportivo San Isidro" style="width: 100px;"
   <h1>Club Sportivo San Isidro</h1>
   <p>San Martin, San Juan</p>
 </div>
@@ -124,7 +123,7 @@ function pasarAsistencia() {
 
     for (let i = 1; i <= cantidad; i++) {
         let nombre = prompt("Nombre del alumno " + i);
-        let asistio = prompt(nombre + " ¿Asistió? (1=SI / 0=NO)");
+        let asistio = prompt(nombre + " ¿Asistió? (1=SI / 2=NO)");
 
         if (asistio == "1") {
             presentes.push(nombre);
